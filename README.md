@@ -1,1 +1,1 @@
-# Canonical-Algorihtmns-Data-Structures
+# Canonical-Algorithms-Data-Structures
