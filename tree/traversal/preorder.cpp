@@ -27,7 +27,7 @@ private:
 
 //Non-recursive version 
 // Use a stack to emulate recursion
- * Definition for a binary tree node.
+ /* Definition for a binary tree node.
  * struct TreeNode {
  *     int val;
  *     TreeNode *left;
