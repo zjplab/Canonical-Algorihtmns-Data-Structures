@@ -1,3 +1,4 @@
+//Code from http://zxi.mytechroad.com/blog/sp/fenwick-tree-binary-indexed-tree-sp3/
 class FenwickTree {    
 public:
     FenwickTree(int n): sums_(n + 1, 0) {}
