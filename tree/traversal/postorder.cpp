@@ -105,6 +105,27 @@ public:
 };
 
 //reverse
+
+class Solution {
+public:
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> res;
+        stack<TreeNode*> s;
+        TreeNode* p=root;
+        while(p!=nullptr || s.size()){
+            if(p==nullptr){
+                p=s.top(); s.pop();
+            }
+            if(p->left!=nullptr) s.push(p->left);
+            //res.insert(res.begin(), p->val);
+            res.emplace_back(p->val);
+            p=p->right;
+        }
+        reverse(res.begin(), res.end());
+        return res;
+    }
+};
+
 vector<int> postorderTraversal(TreeNode* root) {
         vector<int> result;
         if(root == NULL) return result;
