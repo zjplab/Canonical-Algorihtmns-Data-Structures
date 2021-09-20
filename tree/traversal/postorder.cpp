@@ -25,6 +25,48 @@ private:
 };
 
 
+//2021.9.20
+
+
+class Solution {
+public:
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> res;
+        stack<TreeNode*> s;
+        TreeNode* p=root;
+        while(p!=nullptr || s.size()){
+            if(p==nullptr){
+                p=s.top(); s.pop();
+            }
+            if(p->left!=nullptr) s.push(p->left);
+            res.insert(res.begin(), p->val);
+            p=p->right;
+        }
+        return res;
+    }
+};
+
+
+class Solution {
+public:
+    vector<int> postorderTraversal(TreeNode* root) {
+        vector<int> res;
+        stack<TreeNode*> s;
+        TreeNode *p=root;
+        while(!s.empty() || p){
+            if(p){
+                s.push(p);
+                res.insert(res.begin(), p->val);
+                p=p->right;
+            }
+            else{
+                TreeNode *t=s.top(); s.pop();
+                p=t->left;
+            }
+        }
+        return res;
+    }
+};
 //Non-recursive version 
 // Use a stack to emulate the function call stack 
 /**
